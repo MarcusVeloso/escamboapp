@@ -1,8 +1,4 @@
-class Backoffice::CategoriesController < ApplicationController
-	before_action :authenticate_admin!
-
-	layout "backoffice"
-	
+class Backoffice::CategoriesController < BackofficeController	
   def index
   	@categories = Category.all.order(:description)
   end

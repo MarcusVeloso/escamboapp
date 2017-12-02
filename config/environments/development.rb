@@ -6,6 +6,7 @@ Rails.application.configure do
 
   # Better Erros Config  
   BetterErrors::Middleware.allow_ip! "0.0.0.0/0"
+   config.web_console.whitelisted_ips = '0.0.0.0/0'
 
   # Devise Config
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

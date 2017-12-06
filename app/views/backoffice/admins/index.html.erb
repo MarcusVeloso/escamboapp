@@ -4,7 +4,7 @@
     <div class="panel-heading">
         Listando Admins
             
-        	<%= link_to new_admin_session_path,
+        	<%= link_to new_backoffice_admin_path,
             		type:"button", class:"btn btn-success btn-circle pull-right", style:"margin-top:-5px" do %>
             	<i class="fa fa-plus"></i>
         	<% end %>
@@ -26,7 +26,7 @@
                         	<td style="width:50px; text-align:right"><%= admin.id%></td>                                        
                             <td><%= admin.email%></td>                                        
                             <td style="width:90px">
-                            <%= link_to edit_admin_password_path(admin),
+                            <%= link_to edit_backoffice_admin_path(admin),
                             	type:"button",class:"btn btn-primary btn-circle" do %>
                             	<i class="fa fa-edit"></i>
                         	<% end -%>

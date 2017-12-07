@@ -1,5 +1,5 @@
-class Admin < ActiveRecord::Base
-	enum role: [:full_access, :restricted_access]
+class Admin < ActiveRecord::Base	
+	enum role: {"full_access" =>0, "restricted_access" => 1}
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

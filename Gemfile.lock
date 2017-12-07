@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: b23e3bff38839182cf1b17918a58785cd5f450af
+  branch: master
+  specs:
+    faker (1.8.5)
+      i18n (~> 0.9.1)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -204,6 +212,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
+  faker!
   foreman
   jbuilder (~> 2.0)
   jquery-rails

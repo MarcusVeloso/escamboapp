@@ -25,15 +25,22 @@
                         <tr>
                         	<td style="width:50px; text-align:right"><%= admin.id%></td>                                        
                             <td><%= admin.email%></td>                                        
-                            <td style="width:90px">
+                            <td style="width:150px">
                             <%= link_to edit_backoffice_admin_path(admin),
-                            	type:"button",class:"btn btn-primary btn-circle" do %>
+                            	class:"btn btn-primary btn-circle" do %>
                             	<i class="fa fa-edit"></i>
-                        	<% end -%>
-                            	<button type="button", disabled="disabled", class="btn btn-danger btn-circle"><i class="fa fa-minus"></i></button>
+                        	<% end %>
+                            <% if current_admin.id != admin.id %>
+                                <%= link_to backoffice_admin_path(admin),method: :delete, data: {confirm: "Deseja realmente remover: #{admin.email}?"},
+                                    class:"btn btn-danger btn-circle" do %>                             
+                                     <i class="fa fa-minus"></i>
+                                 <% end %> 
+                            <% else %>
+                                <button type="button", disabled="disabled", class="btn btn-danger btn-circle"><i class="fa fa-minus"></i></button>
+                             <% end %> 
         					</td>
                         </tr>
-                    <% end -%>
+                    <% end %>
                 </tbody>
             </table>
         </div>

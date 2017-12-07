@@ -16,8 +16,7 @@ gem 'devise'
 gem 'devise-i18n'
 #Rails gem of the Bootstrap based admin theme SB Admin 2
 gem 'bootstrap_sb_admin_base_v2'
-gem 'rails-assets-bootstrap', '3.3.7', source: 'https://rails-assets.org'
-gem 'rails-assets-notifyjs', source: 'https://rails-assets.org'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -27,8 +26,14 @@ gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
-# A library for generating fake data such as names, addresses, and phone numbers. 
-gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+source 'https://rails-assets.org' do
+  # Bootstrap
+  gem 'rails-assets-bootstrap', '3.3.7'
+  # NotifyJS
+  gem 'rails-assets-notifyjs'
+  # BootBoxJS
+  gem 'rails-assets-bootbox'
+end
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -63,8 +68,9 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # A library for generating fake data such as names, addresses, and phone numbers. 
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 

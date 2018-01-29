@@ -4,10 +4,12 @@
     <div class="panel-heading">
         Listando Admins
             
-        	<%= link_to new_backoffice_admin_path,
-            		type:"button", class:"btn btn-success btn-circle pull-right", style:"margin-top:-5px" do %>
-            	<i class="fa fa-plus"></i>
-        	<% end %>
+            <% if policy(@admins).new? %>
+            	<%= link_to new_backoffice_admin_path,
+                		type:"button", class:"btn btn-success btn-circle pull-right", style:"margin-top:-5px" do %>
+                	<i class="fa fa-plus"></i>
+            	<% end %>
+            <% end %>
     </div>
     <!-- /.panel-heading -->
     <div class="panel-body">
@@ -30,7 +32,8 @@
                             <td><%= admin.name%></td>                   
                             <td><%= admin.email%></td>
                             <td><%= admin.role_i18n%></td>                                       
-                            <td style="width:150px">
+                            <td style="width:150px">                            
+                            
                             <%= link_to edit_backoffice_admin_path(admin),
                             	class:"btn btn-primary btn-circle" do %>
                             	<i class="fa fa-edit"></i>
@@ -53,10 +56,5 @@
         <!-- /.table-responsive -->
     </div>
         <!-- /.panel-body -->
-<% if notice %>   
-    <script>
-        $.notify("<%= notice%>", "success");
-    </script>    
-<% end %>
 </div>
 <!-- /.panel -->

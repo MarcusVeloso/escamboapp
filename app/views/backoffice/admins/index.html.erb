@@ -19,7 +19,7 @@
                     <tr>                                            
                     	<th>#</th>
                         <th>Nome</th>
-                        <th>E-mail</th>
+                        <!-- <th>E-mail</th> -->
                         <th>Tipo de acesso</th>
                         <th></th>
                     </tr>
@@ -30,12 +30,17 @@
                         	<td style="width:50px; text-align:right">
                             <%= admin.id%></td>
                             <td><%= admin.name%></td>                   
-                            <td><%= admin.email%></td>
+                            <!-- <td><%= admin.email%></td> -->
                             <td><%= admin.role_i18n%></td>                                       
                             <td style="width:150px">                            
                             
+                            <%= link_to edit_backoffice_send_mail_path(admin),
+                             class: "btn btn-info btn-circle", remote: true do %>
+                                <i class="fa fa-envelope"></i>
+                            <% end %>
+
                             <%= link_to edit_backoffice_admin_path(admin),
-                            	class:"btn btn-primary btn-circle" do %>
+                            	class:"btn btn-primary btn-circle", remote: true do %>
                             	<i class="fa fa-edit"></i>
                         	<% end %>
                             <% if current_admin.id != admin.id && policy(@admins).destroy? %>
@@ -60,3 +65,5 @@
         <!-- /.panel-body -->
 </div>
 <!-- /.panel -->
+
+<%= render partial: 'backoffice/admins/shared/send_mail' %>

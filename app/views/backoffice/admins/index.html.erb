@@ -40,7 +40,7 @@
                             <% end %>
 
                             <%= link_to edit_backoffice_admin_path(admin),
-                            	class:"btn btn-primary btn-circle", remote: true do %>
+                            	class:"btn btn-primary btn-circle" do %>
                             	<i class="fa fa-edit"></i>
                         	<% end %>
                             <% if current_admin.id != admin.id && policy(@admins).destroy? %>

@@ -28,15 +28,7 @@ class Backoffice::AdminsController < BackofficeController
   def edit  	
   end
 
-  def update    
-    pwd = params[:admin][:password]
-    pwd_confirmation = params[:admin][:password_confirmation]
-
-    if pwd.blank? && pwd_confirmation.blank?
-        params[:admin].delete(:password)
-        params[:admin].delete(:password_confirmation)
-    end
-
+  def update        
   	if @admin.update(params_admin) 
       AdminMailer.update_email(current_admin, @admin).deliver_now      
   		redirect_to backoffice_admins_path,  					
@@ -47,7 +39,9 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
+    authorize @admim    
     admin_name = @admin.name
+
     if @admin.destroy
         redirect_to backoffice_admins_path,
               notice: I18n.t('messages.destroyed_with', item: @admin.name)
@@ -63,6 +57,16 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def params_admin
-  	params.require(:admin).permit(policy(@admin).permitted_attributes)
+    if password_bank?
+      params[:admin].except!(:password, :password_confirmation)
+    end  
+
+  	 params.require(:admin).permit(policy(@admin).permitted_attributes) 
   end
+
+  def password_bank?
+    params[:admin][:password]
+    params[:admin][:password_confirmation]
+  end
+
 end

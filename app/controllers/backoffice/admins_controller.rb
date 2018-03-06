@@ -39,7 +39,7 @@ class Backoffice::AdminsController < BackofficeController
   end
 
   def destroy
-    authorize @admim    
+    authorize @admin   
     admin_name = @admin.name
 
     if @admin.destroy
@@ -61,12 +61,16 @@ class Backoffice::AdminsController < BackofficeController
       params[:admin].except!(:password, :password_confirmation)
     end  
 
-  	 params.require(:admin).permit(policy(@admin).permitted_attributes) 
+    if @admim.blank?
+      params.require(:admin).permit(:name, :email, :role, :password, :password_confirmation)       
+    else
+  	  params.require(:admin).permit(policy(@admin).permitted_attributes) 
+    end
   end
 
   def password_bank?
-    params[:admin][:password]
-    params[:admin][:password_confirmation]
+    params[:admin][:password].blank? &&
+    params[:admin][:password_confirmation].blank?
   end
 
 end

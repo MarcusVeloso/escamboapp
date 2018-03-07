@@ -20,7 +20,7 @@ namespace :utils do
 
   	100.times do
   		Ad.create!(
-  				title: Faker::Lore.sentence([2,3,4,5].sample),
+  				title: Faker::Lorem.sentence([2,3,4,5].sample),
   				description: LeroleroGenerator.paragraph(Random.rand(3)),
   				member: Member.all.sample,
   				category: Category.all.sample

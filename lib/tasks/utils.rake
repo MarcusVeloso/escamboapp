@@ -39,7 +39,7 @@ namespace :utils do
   task generate_members: :environment do
     puts "Cadastrando Membros..."
 
-    100.times do
+    50.times do
       Member.create!(
         email: Faker::Internet.email,
         password: "123456",
@@ -55,7 +55,7 @@ namespace :utils do
   task generate_ads: :environment do
   	puts "Cadastrando ANÚNCIOS.."
 
-  	100.times do
+  	50.times do
   		Ad.create!(
   				title: Faker::Lorem.sentence([2,3,4,5].sample),
   				description: LeroleroGenerator.paragraph(Random.rand(3)),

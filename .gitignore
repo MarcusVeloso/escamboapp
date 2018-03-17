@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /public/system
+/public/templates/sidebar
 /log/*
 !/log/.keep
 /tmp

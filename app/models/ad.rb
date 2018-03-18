@@ -3,8 +3,8 @@ class Ad < ActiveRecord::Base
   belongs_to :member
 
   # Validates
-  validates_presence_of :title, :description, :picture, :category, :price
-
+  validates :title, :description, :picture, :category, :finish_date, presence: true
+  validates :price, numericality: { greater_than: 0}
   # Scopes
   scope :descending_order, ->(qunatity = 10) { limit(qunatity).order(created_at: :desc) }  
   scope :to_the, ->(member ) {where(member: member)}

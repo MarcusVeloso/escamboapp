@@ -24,6 +24,9 @@ gem 'pundit'
 gem 'money-rails', '~>1'
 # Easy file attachment management for ActiveRecord https://thoughtbot.com/open-source
 gem 'paperclip', '~> 5.0.0'
+# jQuery UI for the Rails asset pipeline
+gem 'jquery-ui-rails'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

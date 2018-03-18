@@ -41,7 +41,10 @@
                     <%= link_to "Dashboard", site_profile_dashboard_index_path %>
                 </li>
                 <li>
-                    <%= link_to "Meus anúncios", site_profile_ads_path%>                    
+                    <%= link_to "Meus anúncios", site_profile_ads_path %>
+                </li>                
+                <li>
+                    <%= link_to "Novo anúncio", new_site_profile_ad_path %>
                 </li>                
             </ul>
         </div>
@@ -61,6 +64,10 @@
 
     </div>
     <!-- /#wrapper -->    
+
+    <% if notice %>   
+        <%= javascript_tag "$.notify('#{notice}','success');" %>                    
+    <% end %>
 </body>
 
 </html>

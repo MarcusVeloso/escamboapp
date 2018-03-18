@@ -3,9 +3,11 @@
 <%if @admin.errors.any? %>                    
     <div class="alert alert-danger alert-dismissable">
     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-    <% @admin.errors.full_messages.each do |message| %>
-        <%= message %>
-    <% end %>    
+    <ul>
+      <% @admin.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>    
+    </ul>
     </div>
 <% end %>
 

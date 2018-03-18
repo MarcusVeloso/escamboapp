@@ -5,6 +5,21 @@ class Site::Profile::AdsController < Site::ProfileController
 		@ads = Ad.to_the(current_member)		
 	end
 
+	def new
+		@ad = Ad.new
+	end
+
+	def create
+		@ad = Ad.new(params_ad)		
+		@ad.member = current_member
+
+		if @ad.save	
+			redirect_to site_profile_ads_path, notice: "Anúncio gravado com sucesso!"
+		else
+			render :new
+		end
+	end
+
 	def edit
 		#
 	end

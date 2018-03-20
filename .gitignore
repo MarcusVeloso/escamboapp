@@ -14,6 +14,7 @@
 # Ignore all logfiles and tempfiles.
 /public/system
 /public/templates/sidebar
+/public/templates/ad-detail
 /log/*
 !/log/.keep
 /tmp

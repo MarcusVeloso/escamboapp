@@ -13,6 +13,7 @@
 
 # Ignore all logfiles and tempfiles.
 /public/system
+/public/templates/login-member
 /public/templates/sidebar
 /public/templates/ad-detail
 /log/*

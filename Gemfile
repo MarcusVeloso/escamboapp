@@ -39,8 +39,12 @@ gem 'coffee-rails', '~> 4.1.0'
 source 'https://rails-assets.org' do
   # Bootstrap
   gem 'rails-assets-bootstrap', '3.3.7'
+  # Bootstrap NOTIFY
+  gem 'rails-assets-bootstrap.growl', source: 'https://rails-assets.org'
+  # Animate CSS
+  gem 'rails-assets-animate-css'
   # NotifyJS
-  gem 'rails-assets-notifyjs'
+  # gem 'rails-assets-notifyjs'
   # BootBoxJS
   gem 'rails-assets-bootbox'
 end

@@ -70,9 +70,7 @@
     <!-- Redenderiza algum javascript chamado dentro da view -->
     <%= yield :javascripts %>
     
-    <% if notice %>   
-        <%= javascript_tag "$.notify('#{notice}','success');" %>                    
-    <% end %>
+    <%= render partial: 'layouts/shared/notifications'%>    
 </body>
 
 </html>

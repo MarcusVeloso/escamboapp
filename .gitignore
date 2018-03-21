@@ -16,6 +16,8 @@
 /public/templates/login-member
 /public/templates/sidebar
 /public/templates/ad-detail
+/public/templates/redcarpet
+/public/templates/sb-admin
 /log/*
 !/log/.keep
 /tmp

@@ -42,7 +42,9 @@ source 'https://rails-assets.org' do
   # Bootstrap NOTIFY
   gem 'rails-assets-bootstrap.growl', source: 'https://rails-assets.org'
   # Animate CSS
-  gem 'rails-assets-animate-css'
+  gem 'rails-assets-animate-css'  
+  # The safe Markdown parser, reloaded. 
+  gem 'redcarpet'  
   # NotifyJS
   # gem 'rails-assets-notifyjs'
   # BootBoxJS
@@ -88,5 +90,7 @@ group :development do
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
   # O Lero-lero Generator é uma ferramenta capaz de gerar frases que 'falam' muita coisa mas que não tem conteúdo algum. 
   gem 'lerolero_generator'
+  # Markdown Lorem Ipsum generator
+  gem 'doctor_ipsum'
 end
 

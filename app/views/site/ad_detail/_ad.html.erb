@@ -1,11 +1,10 @@
 <div class="thumbnail">        
 <%= image_tag @ad.picture.url(:large), class:"img-responsive" %>
   <div class="caption-full">
-
-    <%= @ad.inspect %>
+    
     <h4><%= humanized_money_with_symbol @ad.price, class:"pull-right" %></h4>
-    <h3 class="card-title"><%= @ad.title %></h3>
-    <p class="card-text"><%= @ad.description %></p>            
+    <h3 class="#"><%= @ad.title %></h3>
+      <%= md_to_html @ad.description %>
   </div>
 
   <div class="ratings">

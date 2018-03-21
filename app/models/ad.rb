@@ -6,7 +6,7 @@ class Ad < ActiveRecord::Base
   validates :title, :description, :picture, :category, :finish_date, presence: true
   validates :price, numericality: { greater_than: 0}
   # Scopes
-  scope :descending_order, ->(qunatity = 10) { limit(qunatity).order(created_at: :desc) }  
+  scope :descending_order, ->(quantity = 10) { limit(quantity).order(created_at: :desc) }  
   scope :to_the, ->(member ) {where(member: member)}
   # gem paperclip
   has_attached_file :picture, styles: { large: "800x300#", medium: "320x150#", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

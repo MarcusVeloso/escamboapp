@@ -67,7 +67,18 @@
 	    </div>
 	  </div>	 	
   </div>  
-    
+  
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	      Pré-visualização
+	  </div>
+	  <div class="panel-body">
+	      <% unless @ad.description.blank? %>
+	      <%= md_to_html @ad.description %>
+	      <% end %>
+	  </div>
+</div>
+
   <%= submit_tag "Salvar", class:"btn btn-default" %>
 
   <% end %>

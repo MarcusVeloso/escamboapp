@@ -1,2 +1,3 @@
 class AdDetailController < ApplicationController
+	
 end

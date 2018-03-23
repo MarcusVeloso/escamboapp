@@ -62,8 +62,8 @@
 	<div class="row">
   	<div class="col-xs-12">
 		  <div class="form-group">
-	  	  <%= f.label :description %>
-		    <%= f.text_area :description, class:"form-control", placeholder:"Descrição", rows: 10%>    
+	  	  <%= f.label :description_md %>
+		    <%= f.text_area :description_md, class:"form-control", placeholder:"Descrição", rows: 10%>    
 	    </div>
 	  </div>	 	
   </div>  
@@ -74,7 +74,7 @@
 	  </div>
 	  <div class="panel-body">
 	      <% unless @ad.description.blank? %>
-	      <%= md_to_html @ad.description %>
+	      <%= @ad.description.html_safe %>
 	      <% end %>
 	  </div>
 </div>
